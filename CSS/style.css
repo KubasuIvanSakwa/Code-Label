@@ -1,0 +1,93 @@
+:root{
+    --Auburn: #922529;
+    --Green: #008C51;
+    --whte: #FFFFFF;
+    --black: #000000;
+    --red: #EA5E5E;
+    --yellow: #F7BA3E;
+    --blue: #56B3B4;
+    --purple: #9370db;
+    --background: #1A2B34;
+    --white: #FFFAFA;
+    --gray: #334651;
+    --unit: 10px;
+}
+
+body{
+    background: var(--background);
+    margin: 0;
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+.container{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    width: 600px;
+    gap: var(--unit);
+    overflow: hidden;
+}
+
+/* row formatting */
+.row{
+    height: var(--unit);
+    display: flex;
+    gap: var(--unit);
+    justify-content: center;
+    translate: var(--offset);
+    animation: load-row 1s calc(var(--delay)* 100ms + 500ms) forwards;
+}
+
+/* Cell formatting */
+.cell{
+    height: 100%;
+    width: calc(var(--size, 2)*var(--unit));
+    background-color: var(--gray);
+    border-radius: 1000px;
+}
+
+/* Individual sizes for cell sizing */
+.cell.size-2{--size: 2;}
+.cell.size-3{--size: 3;}
+.cell.size-4{--size: 4;}
+.cell.size-5{--size: 5;}
+.cell.size-6{--size: 6;}
+.cell.size-7{--size: 7;}
+.cell.size-8{--size: 8;}
+.cell.size-9{--size: 9;}
+.cell.size-10{--size: 10;}
+.cell.size-12{--size: 12;}
+.cell.size-14{--size: 14;}
+.cell.size-16{--size: 16;}
+.cell.size-18{--size: 18;}
+.cell.size-20{--size: 20;}
+
+/* Colors for cells */
+.blue{background-color: var(--blue);}
+.cell.red{background-color: var(--red);}
+.cell.yellow{background-color: var(--yellow);}
+.cell.purple{background-color: var(--purple);}
+.cell.Auburn{background-color: var(--Auburn);}
+.cell.Green{background-color: var(--Green);}
+.cell.whte{background-color: var(--whte);}
+.cell.black{background-color: var(--black);}
+.cell.white{background-color: var(--white);}
+
+/* Offset and delays for the rows animation */
+.row:nth-child(1){--delay: 1; --offset: 150px}
+.row:nth-child(2){--delay: 2; --offset: -100px }
+.row:nth-child(3){--delay: 3; --offset: 50px }
+.row:nth-child(4){--delay: 4; --offset: -50px }
+.row:nth-child(5){--delay: 5; --offset: -200px }
+.row:nth-child(6){--delay: 6; --offset: 200px }
+.row:nth-child(7){--delay: 7; --offset: 100px }
+.row:nth-child(8){--delay: 8; --offset: -150px }
+.row:nth-child(9){--delay: 9; --offset: 250px }
+
+/* The rows animation */
+@keyframes load-row{
+    100%{
+        translate: 0;
+    }
+}
